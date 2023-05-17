@@ -1,0 +1,169 @@
+.text-center {
+    text-align: center;
+    font-size: 32px;
+    color: antiquewhite;
+    display: block;
+}
+.contain{
+    background-color: #0e1a17;
+    height: 760px;
+    width: 100% ;
+}
+.row{
+    ext-align: center;
+    justify-content: center;
+    margin: 45px 171px;
+}
+.level{
+    font-size: 20px;
+    border: 2px solid black;
+    width: 127px;
+    border-radius: 16px;
+    padding: 0 26px;
+
+}
+img{
+    height: 760px;
+}
+.heading{
+    font-size: 41px;
+    color: white;
+    margin-left: 2px;
+    margin-top: -2px;
+}
+a {
+    color: red;
+    text-decoration: none;
+    background-color: transparent;
+}
+.width_right{
+    width: 700px;
+}
+
+.menu_game{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.pos {
+    position: relative;
+}
+.abouse{
+    position: absolute;
+    top: 0;
+}
+.m{
+    margin:55px 600px;
+    display: flex;
+
+}
+h6{
+    width: 149px;
+    height: 40px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    padding: 7px 6px;
+    border-radius: 14px;
+}
+.chil_menu{
+    text-align: center;
+    background-color: antiquewhite;
+    display: block;
+    width: 137px;
+    margin: -3px auto;
+    display: none;
+}
+.block{
+    display: block;
+}
+p{
+    color: chocolate;
+    font-size: 20px;
+}
+p:hover{
+    cursor: pointer;
+}  .text-center {
+       text-align: center;
+       font-size: 32px;
+       color: antiquewhite;
+       display: block;
+   }
+.contain{
+    background-color: #0e1a17;
+    height: 760px;
+    width: 100% ;
+}
+.row{
+    ext-align: center;
+    justify-content: center;
+    margin: 45px 171px;
+}
+.level{
+    font-size: 20px;
+    border: 2px solid black;
+    width: 127px;
+    border-radius: 16px;
+    padding: 0 26px;
+
+}
+img{
+    height: 760px;
+}
+.heading{
+    font-size: 41px;
+    color: white;
+    margin-left: 2px;
+    margin-top: -2px;
+}
+a {
+    color: red;
+    text-decoration: none;
+    background-color: transparent;
+}
+.width_right{
+    width: 700px;
+}
+
+.menu_game{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.pos {
+    position: relative;
+}
+.abouse{
+    position: absolute;
+    top: 0;
+}
+.m{
+    margin:55px 600px;
+    display: flex;
+
+}
+h6{
+    width: 149px;
+    height: 40px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    padding: 7px 6px;
+    border-radius: 14px;
+}
+.chil_menu{
+    text-align: center;
+    background-color: antiquewhite;
+    display: block;
+    width: 137px;
+    margin: 5px auto;
+    display: none;
+}
+.block{
+    display: block;
+}
+p{
+    color: chocolate;
+    font-size: 20px;
+}
+p:hover{
+    cursor: pointer;
+}
