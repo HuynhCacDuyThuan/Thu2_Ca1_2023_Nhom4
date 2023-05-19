@@ -57,7 +57,7 @@ a{
     margin: -47px 99px;
 }
 .backroug-repit{
-    background-image:url("img/chuoi.jpg") !important ;
+    background-image:url("chuoi.jpg") !important ;
     background-repeat: no-repeat ;
 }
 
@@ -71,29 +71,29 @@ a{
     color: yellow !important;
 }
 .backroug-repit{
-    background-image:url("img/nam.jpg") ;
+    background-image:url("nam.jpg") ;
     background-repeat: no-repeat ;
 }
 
 .diamond{
-    background-image: url("img/kim cương.jpg") !important;
+    background-image: url("kim cương.jpg") !important;
     background-repeat: no-repeat;
 }
 .wood{
-    background-image: url("img/gô.png") !important;
+    background-image: url("gô.png") !important;
     background-repeat: no-repeat;
 }
 .grass{
-    background-image: url("img/co.png");
+    background-image: url("co.png");
     background-repeat: no-repeat;
 }
 .grass1{
-    background-image: url("img/co.png")!important;
+    background-image: url("co.png")!important;
     background-repeat: no-repeat;
 }
 
 .apple{
-    background-image: url("img/tao.jpg") !important;
+    background-image: url("tao.jpg") !important;
     background-repeat: no-repeat;
 }
 
