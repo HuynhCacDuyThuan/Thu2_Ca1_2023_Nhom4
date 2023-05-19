@@ -118,3 +118,193 @@ function isCheck() {
         }
     }
 }
+
+// Hoang Thanh Ngoan
+// dat bien kiem tra
+let result = true;
+
+// 7. dieu khien ran di chuyen len , xuong, trai , phai
+document.addEventListener("keydown", ev => { // 7.1 gọi tới các button và gán hướng di chuyển cho button đó
+    switch (ev.keyCode) {
+        // nut trái có keycode là 37
+        case 37 :
+            if (direction !== "RIGHT")
+                direction = "LEFT";
+            break;
+        // nut len có keycode là 38
+        case 38 :
+            if (direction !== "DOWN") {
+                direction = "UP";
+            }
+            break;
+        // nut phai co keycode laf 39
+        case 39 :
+            if (direction !== "LEFT") {
+                direction = "RIGHT";
+            }
+            break;
+        // nut xuong cos key code la 40
+        case 40 :
+            if (direction !== "UP") {
+                direction = "DOWN";
+            }
+            break;
+    }
+});
+//   8.di chuyển rắn trái, phải lên xuống bằng các nút điều khiển trên keyboard
+function moveSnake() {
+    switch (direction) {
+        case "UP": // lên
+            cell = snake.pop();
+            cell[0] = snake[0][0] - 1;
+            cell[1] = snake[0][1];
+            // khong cho phép chạm vào các biên đối với level
+
+            if (cell[0] < 0) {
+                $('.modal').addClass('open'); // them class open vao lớp modal
+                $('.game_over').addClass('titleb_lock');//thêm titleb_lock ra khỏi class game_over
+                document.getElementById('exit').addEventListener("click", ev => {
+                    $('.modal').removeClass('open');  //xoa class open vao lớp modal
+                    $('.game_over').removeClass('titleb_lock'); //xoá titleb_lock ra khỏi class game_over
+                    snake = []; //tra ve mang moi
+                    let x = parseInt(Math.random() * 20); //tạo moi ngau nhien theo row
+                    let y = parseInt(Math.random() * 25); //tao moi ngau nhien theo col
+                    snake = [[x, y], [x + 1, y]]; //ve lại ran
+                    score = 0; // sau thua diem tra ve lai khong
+                    $('#socre').text(score); // ghi điem bang jquery
+                });
+            }
+            snake.unshift(cell);
+            isCheck();
+            eatFood();
+            if (score === 50 && result === true  ) {
+                snake = [];// tra ve mang rong
+                $('.modal').addClass('open');// them class open vao score
+                $('.win').addClass('titleb_lock');// them class titleb_lock vào class có tên win
+                document.getElementById('exit').addEventListener("click", ev => {
+                    if (score === 50 || score === 0 || score < 50) {
+                        $('.modal').removeClass('open');//xoa class open vao score
+                        $('.win').removeClass('titleb_lock');//xoá class titleb_lock vào class có tên win
+                        window.location.href='level2.html'; //chuyển qua màn hình level2
+                    }
+                });
+                //
+            }
+            break;
+        case "DOWN": // xuong
+            cell = snake.pop();
+            cell[0] = snake[0][0] + 1;
+            cell[1] = snake[0][1];
+            // dieu kien quay tro lại
+            if (cell[0] >= row) {
+                $('.game_over').addClass('titleb_lock');  //them class titleb_lock vào class có tên là game_over
+                $('.modal').addClass('open'); //them class open vào class có tên là modal
+                document.getElementById('exit').addEventListener("click", ev => {
+                    $('.modal').removeClass('open'); //xoá class open ra class có tên là modal
+                    $('.game_over').removeClass('titleb_lock');//xoá class titleb_lock ra class có tên là game_over
+                    snake = []; // tra ve mang moi
+                    let x = parseInt(Math.random() * 20); // tạo moi ngau nhien theo row
+                    let y = parseInt(Math.random() * 25); // tao moi ngau nhien theo col
+                    snake = [[x, y], [x + 1, y]]; // ve lại ran
+                    score = 0; //sau thua diem tra ve lai khong
+                    $('#socre').text(score); // ghi điem bang jquery
+                });
+            }
+            snake.unshift(cell);
+            isCheck();
+            eatFood();
+            if (score === 50 && result === true ) {
+                snake = [];
+                $('.modal').addClass('open'); //them class open vào class modal
+                $('.win').addClass('titleb_lock');//them titleb_lock open vào class win
+                document.getElementById('exit').addEventListener("click", ev => {
+                    if (score === 50 || score === 0 || score < 50) {
+                        $('.modal').removeClass('open'); //xoá open ra class có tên là  modal
+                        $('.win').removeClass('titleb_lock'); //xoá titleb_lock ra class có tên là  win
+                        window.location.href='level2.html';//chuyển qua màn hình level2
+                    }
+                });
+            }
+            break;
+        case "LEFT": // trai
+            cell = snake.pop();
+            cell[0] = snake[0][0];
+            cell[1] = snake[0][1] - 1;
+            if (cell[1] < 0) {
+                $('.game_over').addClass('titleb_lock');  //them class titleb_lock vào class có tên là game_over
+                $('.modal').addClass('open'); //them class open vào class có tên là modal
+                document.getElementById('exit').addEventListener("click", ev => {
+                    $('.modal').removeClass('open'); //xoá class open ra class có tên là modal
+                    $('.game_over').removeClass('titleb_lock');//xoá class titleb_lock ra class có tên là game_over
+                    snake = []; // tra ve mang moi
+                    let x = parseInt(Math.random() * 20); // tạo moi ngau nhien theo row
+                    let y = parseInt(Math.random() * 25); // tao moi ngau nhien theo col
+                    snake = [[x, y], [x + 1, y]]; // ve lại ran
+                    score = 0; //sau thua diem tra ve lai khong
+                    $('#socre').text(score); // ghi điem bang jquery
+                });
+            }
+            snake.unshift(cell);
+            isCheck();
+            eatFood();
+
+            if (score === 50 && result === true  ) {
+                snake = [];
+                $('.modal').addClass('open');
+                $('.win').addClass('titleb_lock');
+                document.getElementById('exit').addEventListener("click", ev => {
+                    if (score === 50 || score === 0 || score < 50) {
+                        $('.modal').removeClass('open');
+                        $('.win').removeClass('titleb_lock');
+                        window.location.href='level2.html';
+                    }
+                });
+            }
+
+            break;
+        case "RIGHT": // phai
+            cell = snake.pop();
+            cell[0] = snake[0][0];
+            cell[1] = snake[0][1] + 1;
+
+            if (cell[1] >= col) {
+
+                $('.modal').addClass('open');
+                $('.game_over').addClass('titleb_lock');
+                document.getElementById('exit').getElementById('exit').addEventListener("click", ev => {
+                    $('.modal').removeClass('open');
+                    $('.game_over').removeClass('titleb_lock');
+                    snake = []; // tra ve mang moi
+                    let x = parseInt(Math.random() * 20); // tạo moi ngau nhien theo row
+                    let y = parseInt(Math.random() * 25); // tao moi ngau nhien theo col
+                    snake = [[x, y], [x + 1, y]]; // ve lại ran
+                    score = 0; // sau thua diem tra ve lai khong
+                    $('#socre').text(score); // ghi điem bang jquery
+                });
+            }
+
+
+            snake.unshift(cell);
+            isCheck();
+            eatFood();
+
+// level 2
+            if (score === 50 && result === true  ) {
+                snake = [];
+                $('.modal').addClass('open'); //them class open vào class modal
+                $('.win').addClass('titleb_lock');//them titleb_lock open vào class win
+                document.getElementById('exit').addEventListener("click", ev => {
+                    if (score === 50 || score === 0 || score < 50) {
+                        $('.modal').removeClass('open'); //xoá open ra class có tên là  modal
+                        $('.win').removeClass('titleb_lock'); //xoá titleb_lock ra class có tên là  win
+                        window.location.href='level2.html';//chuyển qua màn hình level2
+                    }
+                });
+            }
+
+            // dieu kien ran va cham chuong ngai vat
+
+            break;
+
+    }
+}
